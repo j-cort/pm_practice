@@ -17,9 +17,9 @@ end
   
   describe '#display' do
     it 'returns a list of bookmakrs' do
-      expect(bookmarks).to include "<a href='https://www.makers.tech/'>1. makers</a>"
-      expect(bookmarks).to include "<a href='https://stackoverflow.com/'>2. stackoverflow</a>"
-      expect(bookmarks).to include "<a href='https://github.com/'>3. github</a>"
+      expect(bookmarks).to include "<a href='http://www.makersacademy.com/'>1. makers</a>"
+      expect(bookmarks).to include "<a href='http://www.destroyallsoftware.com'>2. twitter</a>"
+      expect(bookmarks).to include "<a href='http://www.google.com/'>3. google</a>"
     end
 
   end
