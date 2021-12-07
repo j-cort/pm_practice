@@ -11,6 +11,16 @@ class Bookmarks
     result.map { |bookmark| { name: bookmark['title'], link: bookmark['url'] }}
   end
 
+  def self.save(url, title)
+    if ENV['ENVIRONMENT'] == "test"
+      connection = PG.connect(dbname: "bookmark_test_manager")
+    else
+      connection = PG.connect(dbname: "bookmark_manager")
+    end
+    connection.exec("INSERT INTO bookmarks (url, title) VALUES (url, title);")
+    
+  end
+
   def self.display
     display = []
     self.all.each_with_index { | site, index |

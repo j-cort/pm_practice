@@ -1,6 +1,6 @@
-ENV['ENVIRONMENT'] = 'test'
 require 'simplecov'
 require 'simplecov-console'
+ENV['ENVIRONMENT'] = 'test'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

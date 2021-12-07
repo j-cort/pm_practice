@@ -20,6 +20,15 @@ class Bookmark < Sinatra::Base
     erb(:bookmarks)
   end
 
+  get '/add_bookmarks' do
+    erb(:add_bookmarks)
+  end
+
+  post '/save_bookmark' do
+    Bookmarks.save(params[:url], params[:title])
+    redirect '/'
+  end
+
   # post '/names' do
   #   session[:player_name] = params[:player_name]
   #   redirect '/play'
