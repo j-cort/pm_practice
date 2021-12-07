@@ -1,0 +1,8 @@
+<% if @bookmarks == nil %>
+  <h2>No bookmarks added</h2>
+<% else %>
+  <% @presentable_bookmarks.each do |site| %>
+    <%=site%> <br>
+  <% end %>
+<% end %>
+

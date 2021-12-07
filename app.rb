@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-# require './lib/game'
+require './lib/bookmarks'
 
 class Bookmark < Sinatra::Base
   enable :sessions
@@ -10,9 +10,15 @@ class Bookmark < Sinatra::Base
   end
 
   # routes:
-  # get '/' do
-  #   erb(:index)
-  # end
+  get '/' do
+    erb(:index)
+  end
+
+  get '/bookmarks' do
+    @bookmarks = Bookmarks.all
+    @presentable_bookmarks = Bookmarks.display
+    erb(:bookmarks)
+  end
 
   # post '/names' do
   #   session[:player_name] = params[:player_name]
